@@ -20,6 +20,4 @@ var     user = db.define(
     }
 );
 user.removeAttribute('id');
-
-
 module.exports = user;

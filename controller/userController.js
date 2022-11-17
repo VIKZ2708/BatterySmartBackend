@@ -21,7 +21,7 @@ controller.getAll = async function (req, res) {
     }
 };
 
-controller.getname = async function (req, res) {
+controller.     getname = async function (req, res) {
     try {
         var userData = await model.user.findAll({
         where: { name: { [Op.like]: `%${req.params.name}%` } },
@@ -41,14 +41,16 @@ controller.getname = async function (req, res) {
 controller.createNew = async function (req, res) {
     try {
         console.log("aacbhjhdcbjbdjdj   dcjnkdcsbk",req.body)
+        req.body=req.body.values;
         //   check data has already been created
         const checkData = await model.user.findAll({
         where: {
             [Op.or]: {
                 name: req.body.name
                 },
-            },
+            },  
         });
+
         
         console.log( checkData,"aacbhj")
     if (checkData.length > 0) {

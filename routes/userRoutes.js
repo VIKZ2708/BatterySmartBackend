@@ -7,4 +7,5 @@ router.get("/:name", controller.user.getname);
 router.post("/create", controller.user.createNew);
 router.put("/", controller.user.editAt);
 router.delete("/", controller.user.deleteUser);
+
 module.exports = router;
